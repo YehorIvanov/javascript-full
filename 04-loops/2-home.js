@@ -1,3 +1,4 @@
+/* eslint-disable no-continue */
 /* <div class="sc-bf073531-0 cSkfsr"><p>Создай цикл, который пройдет по всем числам от <code>start</code> к <code>end</code> и в зависимости от кратности числа будет применять к нему разные математические операции</p>
 <h4>Основные требования:</h4>
 <ol>
@@ -22,7 +23,7 @@ const end = 31;
 let result = 0;
 for (let counter = start; counter <= end; counter += 1) {
   console.log("counter:" + counter);
-  console.log('result:' + result)
+  console.log("result:" + result);
   if (counter % 5 === 0) {
     console.log("число кратно 5");
     console.log(counter);
@@ -43,6 +44,4 @@ for (let counter = start; counter <= end; counter += 1) {
     result *= counter;
     continue;
   }
-  
 }
-
