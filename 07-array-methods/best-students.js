@@ -24,3 +24,25 @@ getMessagesForBestStudents(allStudTest1, retakeStudTest1); // ===> ['Good job, D
 const allStudTest2 = ["Den", "John", "Ann", "Mike"];
 const retakeStudTest2 = ["Den", "John", "Ann", "Mike"];
 getMessagesForBestStudents(allStudTest2, retakeStudTest2); // ===> []
+
+const reverseArray = (arr) => {
+  if (!Array.isArray(arr)) return null;
+  return arr.slice().reverse();
+};
+
+const cloneArr = (arr) => (Array.isArray(arr) ? [...arr] : null);
+
+const withdraw = (clients, balances, client, amount) => {
+  if (balances[clients.indexOf(client)] >= amount) {
+    balances[clients.indexOf(client)] -= amount;
+    return balances[clients.indexOf(client)];
+  }
+  return -1;
+};
+
+withdraw(["Ann", "John", "User"], [1400, 87, -6], "John", 50); // ==> 37 (balances array should be [1400, 37, -6])
+withdraw(["Ann", "John", "User"], [1400, 87, -6], "User", 10); // ==> -1 (balances array should be [1400, 87, -6])
+
+// put your code here
+const filterNames = (arr, text) =>
+  arr.slice().filter((item) => item.length > 5 && item.includes(text));
