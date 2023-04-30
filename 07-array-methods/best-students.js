@@ -34,8 +34,8 @@ const cloneArr = (arr) => (Array.isArray(arr) ? [...arr] : null);
 
 const withdraw = (clients, balances, client, amount) => {
   if (balances[clients.indexOf(client)] >= amount) {
-    balances[clients.indexOf(client)] -= amount;
-    return balances[clients.indexOf(client)];
+    return balances[clients.indexOf(client)] - amount;
+    // return balances[clients.indexOf(client)]  ;
   }
   return -1;
 };
