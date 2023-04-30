@@ -46,3 +46,13 @@ withdraw(["Ann", "John", "User"], [1400, 87, -6], "User", 10); // ==> -1 (balanc
 // put your code here
 const filterNames = (arr, text) =>
   arr.slice().filter((item) => item.length > 5 && item.includes(text));
+
+function arrAverage(arr) {
+  if (Array.isArray(arr)) {
+    return arr.reduce(
+      (acc, item, index, array) => acc + item / array.length,
+      0
+    );
+  }
+  return null;
+}
