@@ -1,6 +1,4 @@
-import { getOddNumbers } from "./calculator.js";
-import getSum from "./calculator.js";
-import { getSquaredArray } from "./calculator.js";
+import getSum, { getOddNumbers, getSquaredArray } from "./calculator.js";
 
 it("expect get squared array", () => {
   const result = getSquaredArray([1, 2, 3]);
