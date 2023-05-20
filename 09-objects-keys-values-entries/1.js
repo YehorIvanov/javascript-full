@@ -96,18 +96,18 @@ const mergeObjectsV4 = (obj1, obj2) => {
   return { ...obj2, ...obj1 };
 };
 // examples
-const obj1 = {
-  name: "Tom",
-  age: 17,
-};
-const obj2 = {
-  name: "Bob",
-  student: false,
-};
-mergeObjectsV1(obj1, obj2); // ==> { name: 'Bob', age: 17, student: false }
-mergeObjectsV2(obj1, obj2); // ==> { name: 'Tom', age: 17, student: false }
-mergeObjectsV3(obj1, obj2); // ==> { name: 'Bob', age: 17, student: false }
-mergeObjectsV4(obj1, obj2); // ==> { name: 'Tom', age: 17, student: false }
+// const obj1 = {
+//   name: "Tom",
+//   age: 17,
+// };
+// const obj2 = {
+//   name: "Bob",
+//   student: false,
+// };
+// mergeObjectsV1(obj1, obj2); // ==> { name: 'Bob', age: 17, student: false }
+// mergeObjectsV2(obj1, obj2); // ==> { name: 'Tom', age: 17, student: false }
+// mergeObjectsV3(obj1, obj2); // ==> { name: 'Bob', age: 17, student: false }
+// mergeObjectsV4(obj1, obj2); // ==> { name: 'Tom', age: 17, student: false }
 
 // Данные о жителях дома храняться в виде объекта в формате</p>
 // const rooms = {
@@ -151,3 +151,82 @@ const dayTransactions = [
   { userId: 22, amount: 160, operation: "buy" },
   { userId: 44, amount: 90, operation: "sell" },
 ];
+
+// Есть два массива одинаковой длины. Нужно создать объект на основе данных в этих массивах. В первом массиве - название ключей объекта, во втором - значение ключей под соответствующим индексом</p>
+// <h4>Основные требования:</h4>
+//     <li>Ф-ция <code>buildObject</code> должна быть в файле <code>index.js</code></li>
+//     <li><code>buildObject</code> принимает 2 аргумента: <code>keysList</code> - массив строк, <code>valuesList</code> - массив строк</li>
+//     <li>В массивах может быть любое количество элементов. Важно, что длина из одинаковая
+//     <li>Для решения попробуй использовать метод массива <code>.reduce</code> и вычислимые свойства объекта</li>
+//     <li>Помни, что <code>.reduce</code> принимает не только 2 аргумента</li>
+//     <li>Принимается решение и с обычным циклом <code>for</code>
+
+const buildObject = (keysList, valuesList) => {
+  return keysList.reduce((obj, key, index) => {
+    return { ...obj, [key]: valuesList[index] };
+  }, {});
+};
+// examples
+const keys = ["name", "address", "age"];
+const values = ["Bob", "Ukraine", 34];
+const result = buildObject(keys, values); // ==> { name: 'Bob', address: 'Ukraine', age: 34 }
+
+function compareObjects(firstObj, secondObj) {
+  if (Object.values(firstObj).length !== Object.values(secondObj).length)
+    return false;
+  return Object.keys(firstObj).every((key) => firstObj[key] === secondObj[key]);
+}
+
+// examples
+const obj1 = {
+  name: "Tom",
+  age: 17,
+};
+
+const obj2 = {
+  name: "Bob",
+  age: 17,
+};
+
+const obj3 = {
+  name: "Bob",
+  age: 17,
+  student: false,
+};
+
+const obj4 = {
+  name: "Tom",
+  age: 17,
+};
+
+const obj5 = {
+  age: 17,
+  name: "Tom",
+};
+
+compareObjects(obj1, obj2); // ==> false
+compareObjects(obj2, obj3); // ==> false
+compareObjects(obj1, obj4); // ==> true
+compareObjects(obj4, obj5); // ==> true
+
+const customers = {
+  "customer-id-1": {
+    name: "William",
+    age: 54,
+  },
+  "customer-id-2": {
+    name: "Tom",
+    age: 17,
+  },
+};
+
+const getRandomNumbers = (length, from, to) => {
+  from = Math.ceil(from);
+  to = Math.floor(to);
+  if (to - from <= 0) return null;
+  const result = [];
+  for (let i = 0; i < length; i += 1) {
+    result.push(Math.floor(Math.random() * (to - from) + from));
+  }
+  return result;
+};
