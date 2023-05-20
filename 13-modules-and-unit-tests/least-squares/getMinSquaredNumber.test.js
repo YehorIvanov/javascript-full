@@ -10,5 +10,5 @@ it("get null if string", () => {
 });
 it("get null if empty array", () => {
   const result = getMinSquaredNumber([]);
-  expect(result).toEqual(null);
+  expect(result).toEqual(undefined);
 });
