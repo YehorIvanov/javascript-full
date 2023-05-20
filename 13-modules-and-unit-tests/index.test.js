@@ -1,8 +1,8 @@
 const getEvenNumbers = (arr) => arr.filter((num) => num % 2 === 0);
-it("", () => {
+it("expect 17 is 17", () => {
   expect(17).toEqual(17);
 });
-it("", () => {
+it("expect 18 is not 17", () => {
   expect(18).not.toEqual(17);
 });
 it("get only even numbers from array", () => {
