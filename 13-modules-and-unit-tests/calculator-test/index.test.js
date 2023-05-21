@@ -1,4 +1,4 @@
-import { calc } from ".";
+import { calc } from "./calculator";
 
 it("get 2 + 2", () => {
   const result = calc("2 + 2");
