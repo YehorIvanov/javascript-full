@@ -13,7 +13,7 @@ export const getItemsList = () => {
 };
 
 export const getItemsArray = () => {
-  const elementsArray = Array.from(document.querySelectorAll(".technology"));
+  const elementsArray = Array.from(document.querySelectorAll(".tool"));
   console.dir(elementsArray);
   return elementsArray;
 };
