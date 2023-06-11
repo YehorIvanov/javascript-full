@@ -1,4 +1,4 @@
-const tasks = [
+export const tasks = [
   { text: "Buy milk", done: false },
   { text: "Pick up Tom from airport", done: false },
   { text: "Visit party", done: false },
@@ -10,7 +10,7 @@ const tasks = [
  * @param {object[]} tasksList
  * @return {undefined}
  */
-const renderTasks = (tasksList) => {
+export const renderTasks = (tasksList) => {
   const listElem = document.querySelector(".list");
   const listItemElems = tasksList.map(({ text, done }) => {
     const listItemElem = document.createElement("li");
