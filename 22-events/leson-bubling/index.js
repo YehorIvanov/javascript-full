@@ -63,4 +63,4 @@ document
   .querySelector(".attach-handlers-btn")
   .addEventListener("click", attachHandlersAction);
 
-// logTarget("DIV", "green");
+attachHandlersAction();
