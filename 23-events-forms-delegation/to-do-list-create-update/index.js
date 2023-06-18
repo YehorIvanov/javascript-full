@@ -38,7 +38,7 @@ const renderTasks = (tasksList) => {
     });
   listElem.append(...tasksElems);
 };
-// const checkboxList = document.querySelectorAll
+
 const addTaskAction = () => {
   const inputElem = document.querySelector(".task-input");
   if (inputElem.value !== "") {
@@ -52,6 +52,18 @@ const addTaskAction = () => {
   }
 };
 
-document.querySelector(".create-task-btn").addEventListener("click", addTaskAction);
+const updateTaskStatus = (event) => {
+  console.log(event.target.checked);
+  tasks.find((elem) => elem.id === +event.target.dataset.id).done =
+    event.target.checked;
+  // tasks.filter((elem) => elem.id === event.target.dataset.id);
+};
 setIdsForTasks();
 renderTasks(tasks);
+
+document
+  .querySelector(".create-task-btn")
+  .addEventListener("click", addTaskAction);
+Array.from(document.querySelectorAll(".list__item-checkbox")).forEach((elem) =>
+  addEventListener("click", updateTaskStatus)
+);
