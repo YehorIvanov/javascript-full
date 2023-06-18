@@ -53,10 +53,10 @@ const addTaskAction = () => {
 };
 
 const updateTaskStatus = (event) => {
-  console.log(event.target.checked);
+  console.log(event.target);
   tasks.find((elem) => elem.id === +event.target.dataset.id).done =
     event.target.checked;
-  // tasks.filter((elem) => elem.id === event.target.dataset.id);
+  renderTasks(tasks);
 };
 setIdsForTasks();
 renderTasks(tasks);
