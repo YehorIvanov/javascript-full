@@ -11,6 +11,7 @@ const getNewID = () => {
 const setIdsForTasks = () => {
   tasks.forEach((elem) => {
     if (elem.id === undefined) {
+      // eslint-disable-next-line no-param-reassign
       elem.id = getNewID();
     }
   });
