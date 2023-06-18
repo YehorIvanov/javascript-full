@@ -17,9 +17,10 @@ const setIdsForTasks = () => {
   });
 };
 
-const listElem = document.querySelector(".list");
+setIdsForTasks();
 
 const renderTasks = (tasksList) => {
+  const listElem = document.querySelector(".list");
   listElem.innerHTML = "";
   const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
@@ -40,6 +41,8 @@ const renderTasks = (tasksList) => {
   listElem.append(...tasksElems);
 };
 
+renderTasks(tasks);
+
 const addTaskAction = () => {
   const inputElem = document.querySelector(".task-input");
   if (inputElem.value !== "") {
@@ -59,8 +62,7 @@ const updateTaskStatus = (event) => {
     event.target.checked;
   renderTasks(tasks);
 };
-setIdsForTasks();
-renderTasks(tasks);
+
 
 document
   .querySelector(".create-task-btn")
