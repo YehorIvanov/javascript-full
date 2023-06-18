@@ -63,7 +63,6 @@ const updateTaskStatus = (event) => {
   renderTasks(tasks);
 };
 
-
 document
   .querySelector(".create-task-btn")
   .addEventListener("click", addTaskAction);
