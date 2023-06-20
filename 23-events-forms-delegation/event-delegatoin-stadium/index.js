@@ -6,12 +6,6 @@
 // <li>По клику мыши по месту, должны отобразиться координаты места в отведенном для этого блоке. Формат текста <code>S 2 - L 7 - S 3</code>. Cледи за пробелами</li>
 // <li>Секторы - CSS класс <code>.sector</code>, сидения - CSS класс <code>.sector__seat</code>, табло - CSS класс <code>.board</code>
 
-// const arenaElem = document.querySelector(".arena");
-
-// const sectorLineElem = document.createElement("div");
-// sectorLineElem.classList.add("sector__line");
-
-// sectorElem.classList.add("sector");
 const showSeatNumber = (event) => {
   console.log(event.target.dataset);
   document.querySelector(".board__selected-seat").innerHTML =
@@ -40,6 +34,3 @@ const arenaRender = () => {
 };
 
 arenaRender();
-
-// sectorLineElem.appendChild(seatElem);
-// sectorElem.appendChild(sectorLineElem);
