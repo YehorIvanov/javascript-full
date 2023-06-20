@@ -29,7 +29,7 @@ const arenaRender = () => {
       for (let seat = 1; seat < 11; seat += 1) {
         const seatElem = document.createElement("div");
         seatElem.classList.add("sector__seat");
-        seatElem.addEventListener("mouseover", showSeatNumber);
+        seatElem.addEventListener("click", showSeatNumber);
         seatElem.dataset.seat = `S ${sector} - L ${line} - S ${seat}`;
         sectorLineElem.appendChild(seatElem);
       }
