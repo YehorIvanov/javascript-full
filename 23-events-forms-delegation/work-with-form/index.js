@@ -34,6 +34,7 @@ const emailInputElem = document.querySelector("#email");
 const passwordInputElem = document.querySelector("#password");
 const emailErrorElem = document.querySelector(".error-text_email");
 const passwordErrorElem = document.querySelector(".error-text_password");
+const formElem = document.querySelector(".login-form");
 
 const isRequired = (value) => (value ? undefined : "Required");
 const isEmail = (value) =>
@@ -53,6 +54,11 @@ const onPasswordChenge = (event) => {
     .join(", ");
   passwordErrorElem.textContent = errorText;
 };
+const onFormSubmit = (event) => {
+  event.preventDefault();
+  console.log(Object.fromEntries(new FormData(formElem)));
+  alert(JSON.stringify(Object.fromEntries(new FormData(formElem))));
+};
 emailInputElem.addEventListener("input", onEmailChenge);
-
 passwordInputElem.addEventListener("input", onPasswordChenge);
+formElem.addEventListener("submit", onFormSubmit);
