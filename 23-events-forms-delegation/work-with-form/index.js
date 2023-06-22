@@ -38,7 +38,7 @@ const formElem = document.querySelector(".login-form");
 
 const isRequired = (value) => (value ? undefined : "Required");
 const isEmail = (value) =>
-  value.includes("@") ? undefined : "Should be an Email";
+  value.includes("@") ? undefined : "Should be an email";
 
 const onEmailChenge = (event) => {
   const errorText = [isRequired, isEmail]
