@@ -8,6 +8,7 @@ const tasks = [
 const getNewID = () => {
   return Math.floor(Math.random() * (998 - 1)) + 2 + new Date().getTime();
 };
+
 const setIdsForTasks = () => {
   tasks.forEach((elem) => {
     if (elem.id === undefined) {
