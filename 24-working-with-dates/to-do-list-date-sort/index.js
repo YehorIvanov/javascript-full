@@ -91,4 +91,6 @@ document
   .querySelector(".create-task-btn")
   .addEventListener("click", addTaskAction);
 setIdsAndDateForTasks();
-renderTasks(tasks);
+document.addEventListener("DOMContentLoaded", () => {
+  renderTasks(tasks);
+});
