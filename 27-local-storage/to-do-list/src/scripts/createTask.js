@@ -8,7 +8,7 @@ const getNewID = () => {
 const addTaskAction = () => {
   const inputElem = document.querySelector(".task-input");
   if (inputElem.value !== "") {
-    let tasks = getItem("tasks");
+    let tasks = getItem("tasksList");
     if (!Array.isArray(tasks)) {
       tasks = [];
     }
@@ -17,7 +17,7 @@ const addTaskAction = () => {
       done: false,
       id: getNewID(),
     });
-    setItem("tasks", tasks);
+    setItem("tasksList", tasks);
     inputElem.value = "";
     renderTasks(tasks);
   }

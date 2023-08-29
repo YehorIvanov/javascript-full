@@ -2,7 +2,7 @@ import { getItem } from "./storage.js";
 import updateTaskStatus from "./updateTask.js";
 
 const renderTasks = () => {
-  let tasksList = getItem("tasks");
+  let tasksList = getItem("tasksList");
   if (!tasksList) tasksList = [];
   const listElem = document.querySelector(".list");
   listElem.innerHTML = "";
