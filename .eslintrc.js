@@ -26,5 +26,6 @@ module.exports = {
         endOfLine: "auto",
       },
     ],
+    quotes: ["warn", "double"], // Используйте "single" для одинарных кавычек
   },
 };
