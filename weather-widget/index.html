@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Weather widget</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="search">
+        <input
+          class="search__input"
+          type="text"
+          placeholder="enter city name"
+          spellcheck="false"
+        />
+        <button class="search__button">
+          <img class="search__button-img" src="img/search.png" alt="search" />
+        </button>
+      </div>
+      <div class="weather">
+        <img src="img/rain.png" alt="weather img" class="weather__icon" />
+        <h1 class="weather__temp">22°c</h1>
+        <h2 class="weather__city">Kyiv</h2>
+        <div class="weather__details">
+          <div class="weather__col">
+            <img
+              class="weather__col-img"
+              src="img/humidity.png"
+              alt="humidity"
+            />
+            <div>
+              <p class="weather__humidity">50%</p>
+              <p>Humidity</p>
+            </div>
+          </div>
+          <div class="weather__col">
+            <img class="weather__col-img" src="img/wind.png" alt="wind speed" />
+            <div>
+              <p class="weather__wind">15 km/h</p>
+              <p>Wind Speed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
