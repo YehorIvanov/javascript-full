@@ -1,0 +1,69 @@
+$first-color: #f8b195;
+$second-color: #f67280;
+$third-color: #c06c84;
+$fourth-color: #6c5b7b;
+$fifth-color: #355c7d;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: $first-color;
+  background-color: $fifth-color;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    -225deg,
+    $fifth-color 0%,
+    $second-color 78%,
+    $third-color 100%
+  );
+}
+.glass {
+  background: $fourth-color;
+//   opacity: 0.3;
+  filter: blur(1px);
+  width: 80%;
+  height: 40%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  &::before {
+    content: "";
+    width: 20vh;
+    height: 20vh;
+    background-color: $third-color;
+    border-radius: 5px;
+    position: absolute;
+    left: -5vh;
+    top: -10vh;
+    z-index: -2;
+    opacity: 0.6;
+  }
+  &::after {
+    content: "";
+    width: 25vh;
+    height: 25vh;
+    background-color: $first-color;
+    border-radius: 50%;
+    position: absolute;
+    right: -5vh;
+    bottom: -10vh;
+    z-index: -2;
+    opacity: 0.3;
+  }
+}
+.clock {
+  background: transparent;
+  font-size: 50px;
+  font-weight: 800;
+}

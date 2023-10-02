@@ -1,0 +1,64 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #f8b195;
+  background-color: #355c7d;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-225deg, #355c7d 0%, #f67280 78%, #c06c84 100%);
+}
+
+.glass {
+  background: #6c5b7b;
+  filter: blur(1px);
+  width: 80%;
+  height: 40%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.glass::before {
+  content: "";
+  width: 20vh;
+  height: 20vh;
+  background-color: #c06c84;
+  border-radius: 5px;
+  position: absolute;
+  left: -5vh;
+  top: -10vh;
+  z-index: -2;
+  opacity: 0.6;
+}
+.glass::after {
+  content: "";
+  width: 25vh;
+  height: 25vh;
+  background-color: #f8b195;
+  border-radius: 50%;
+  position: absolute;
+  right: -5vh;
+  bottom: -10vh;
+  z-index: -2;
+  opacity: 0.3;
+}
+
+.clock {
+  background: transparent;
+  font-size: 50px;
+  font-weight: 800;
+}
+
+/*# sourceMappingURL=styles.css.map */
